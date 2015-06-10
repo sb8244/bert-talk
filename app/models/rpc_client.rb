@@ -7,7 +7,7 @@ class RpcClient
   # managing an RPC server being down, or for network blips
   def method_missing(method, *args)
     method_args = args.map { |arg| YAML.dump(arg) }
-    YAML.load(@svc.call.coordinator.send(method, *method_args))
+    YAML.load(@svc.call.with_rails.send(method, *method_args))
   rescue BERTRPC::UserError => e
     sleep(5)
     retry
