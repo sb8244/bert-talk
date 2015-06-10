@@ -8,7 +8,6 @@ gem 'rails', '4.2.1'
 # database
 gem 'sqlite3'
 
-
 # process
 gem 'dotenv-rails'
 gem 'foreman', '0.63', require: false

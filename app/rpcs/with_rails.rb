@@ -3,7 +3,12 @@ module WithRails
     "world"
   end
 
-  def hit_db
+  def add_widget(name)
+    Widget.create!(name: name)
+    true
+  end
 
+  def widget_count
+    Widget.count
   end
 end
